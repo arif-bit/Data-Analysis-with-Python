@@ -489,3 +489,100 @@ A histogram needs only one column.
 ```Python
 df["Duration"].plot(kind = 'hist')
 ```
+# **Numpy**
+
+### **Installation**
+
+```Python
+pip install numpy
+```
+### **load numpy**
+
+```Python
+import numpy as np
+```
+### **The Basics**
+```Python
+a=np.array([1,2,3],dtype='int32')
+b = np.array([[1.0,2.0,3.0],[3.0,4.0,5.0]])
+```
+### **Get Dimension**
+```python
+a.ndim
+```
+
+### **Get Shape**
+```python
+a.shape
+```
+### **Get Type**
+```python
+a.dtype
+```
+
+### **Get Size**
+```python
+a.itemsize
+```
+### **Get Total size**
+```python
+a.size
+```
+
+## **Accessing / changing specific elements, rows, columns etc**
+```python
+a=np.array([1,2,3,4,5,6,7],[8,9,10,11,12,13,14])
+```
+### **Get specific element [ row, column ]**
+```Python
+a[1,5]
+```
+### **Get a specific row**
+```Python
+a[0,:]
+```
+### **Get a specific column**
+```Python
+a[:,2]
+```
+### **Getting a little more fancy [startindex,stopindex,stepsize]**
+```Python
+a[0,1:-1:2]
+```
+### **Change an element**
+```Python
+a[1,5]=20
+```
+
+## **Initializing Different Arrays**
+
+### **ALL 0s matrix**
+```Python
+np.zeros(5)
+```
+### **ALL 1s matrix**
+```Python
+np.ones(4,2,2)
+```
+### **Any other number**
+```Python
+np.full((2,2),99,dype='float32')
+```
+
+### **Any other number(full_like)**
+```Python
+np.full_like(a.shape,4)
+```
+
+### **Random Decimal Numbers**
+```Python
+np.random.rand(4,2)
+```
+### **Random Integer Numbers**
+```Python
+np.random.randint(7)
+```
+### **identity matrix**
+```Python
+np.indetity(3)
+```
