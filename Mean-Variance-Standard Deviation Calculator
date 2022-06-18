@@ -1,0 +1,56 @@
+import numpy as np
+
+def calculate(list):
+    if len(list) < 9:
+        raise ValueError('List must contain nine numbers.')
+
+    oneDtoTwoDarry = np.reshape(list, (3, 3))
+
+    # calculation for mean
+    meanAxis1 = np.mean(oneDtoTwoDarry, axis=0)
+    meanAxis2 = np.mean(oneDtoTwoDarry, axis=1)
+    meanFlattend = np.mean(list)
+
+    # calculation for variance
+    variance = np.var(list)
+    varianceAxis1 = np.var(oneDtoTwoDarry, axis=0)
+    varianceAxis2 = np.var(oneDtoTwoDarry, axis=1)
+
+    # calculation for standard deviation
+    deviation = np.std(list)
+    deviationAxis1 = np.std(oneDtoTwoDarry, axis=0)
+    deviationAxis2 = np.std(oneDtoTwoDarry, axis=1)
+
+    # calculation for max
+    mx = np.max(list)
+    mxAxis1 = np.max(oneDtoTwoDarry, axis=0)
+    mxAxis2 = np.max(oneDtoTwoDarry, axis=1)
+
+    # calculation for min
+    mn = np.min(list)
+    mnAxis1 = np.min(oneDtoTwoDarry, axis=0)
+    mnAxis2 = np.min(oneDtoTwoDarry, axis=1)
+
+    # calculation for summation
+    summation = np.sum(list)
+    summationAxis1 = np.sum(oneDtoTwoDarry, axis=0)
+    summationAxis2 = np.sum(oneDtoTwoDarry, axis=1)
+
+    # print(meanAxis1, meanAxis2, meanFlattend )
+    # print(varianceAxis1, varianceAxis2, variance)
+    # print(deviationAxis1, deviationAxis2, deviation)
+    # print(mxAxis1, mxAxis2, mx)
+    # print(mnAxis1, mnAxis2, mn)
+    # print(summationAxis1, summationAxis2, summation)
+
+    calculations = {
+        'mean': [meanAxis1.tolist(), meanAxis2.tolist(), meanFlattend.tolist()],
+        'variance': [varianceAxis1.tolist(), varianceAxis2.tolist(), variance.tolist()],
+        'standard deviation': [deviationAxis1.tolist(), deviationAxis2.tolist(), deviation.tolist()],
+        'max': [mxAxis1.tolist(), mxAxis2.tolist(), mx.tolist()],
+        'min': [mnAxis1.tolist(), mnAxis2.tolist(), mn.tolist()],
+        'sum': [summationAxis1.tolist(), summationAxis2.tolist(), summation.tolist()]
+
+    }
+
+    return calculations
